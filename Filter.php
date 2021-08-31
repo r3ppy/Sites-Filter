@@ -14,7 +14,7 @@ function FilterDomain($Domain) {
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $result = curl_exec($ch);
     curl_close($ch);
-    if (strpos($result, "<html>") !== false) {
+    if (strpos($result, "Drupal.settings") !== false) {
         echo $Domain." : Durpal!\n";
     }
     
@@ -27,7 +27,7 @@ function FilterDomain($Domain) {
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $result = curl_exec($ch);
     curl_close($ch);
-    if (strpos($result, "<html>") !== false) {
+    if (strpos($result, 'content="joomla') !== false) {
         echo $Domain." : Joomla!\n";
     }
     
